@@ -10,11 +10,13 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def update
-    p post = Post.find_by(id: id_params)
-    post.update(likes: (post.likes.to_i + 1 ))
+    post = Post.find_by(id: id_params)
+    post.increment(:likes)
+    post.save
     redirect_to posts_url
   end
 
