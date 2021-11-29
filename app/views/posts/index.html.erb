@@ -67,10 +67,17 @@
           
 
           <a href="#" class="card-link">Comment</a>
-
-
-
           
+          <%= for_for @comments do |form|
+          <%= form.label :comment %>
+          <%= form.text_field :message %>
+          <%= form.submit "Submit Comment" %>
+          <% end %> 
+
+
+
+
+
 
         </div>
       </div>
