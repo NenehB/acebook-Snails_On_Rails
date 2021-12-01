@@ -36,8 +36,8 @@
     </li>
     </ul>
 
-    <div class="center"
-<div class="mb-3 offset-4" style="text-align: center;">
+    <div class="center">
+<div class="mb-3 offset-12" style="text-align: center;">
   <label for="post" class="form-label"> <h4>Whats on your mind?</h4></label>
   <textarea class="form-control offset-4" id="exampleFormControlTextarea1" rows="4" style="width: 40rem;"></textarea>
   <div class="row">
@@ -45,6 +45,12 @@
 </div>
 </div>
 </div>
+
+<body>
+  <div style = "position:relative; left:900px; top:-20px;">
+    <%= link_to 'Upload a photo', images_path, class: 'button alt' %>
+  </div>
+</body>
 
 <% @posts.each do |post| %>
   <div class="container">
