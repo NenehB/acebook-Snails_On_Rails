@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<center>
+  <p>
+    <strong>Title:</strong>
+    <%= @image.title %>
+  </p>
+
+  <p>
+  <div style='width:400px; height:auto'>
+    <strong>Caption:</strong>
+    <%= image_tag(@image.image) %>
+    <%= @image.caption %>
+  </p>
+  </div>
+
+  <%= link_to 'Edit', edit_image_path(@image) %> |
+  <%= link_to 'Back', images_path %>
+</center>
