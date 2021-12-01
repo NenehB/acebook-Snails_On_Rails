@@ -6,7 +6,7 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
 
   #Store uploaded files on the local file system
-  config,active_storage.service = :local
+  config.active_storage.service = :local
 
   config.cache_classes = false
 
