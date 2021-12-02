@@ -39,8 +39,30 @@
   </div>
 </nav>
 
+
+<div class="row align-items-start, offset-1">
+  <div class="col">
+    <h3> Users you may know </h3>
+      <% @contacts.each do |users| %>
+        <% if users.id != session[:user_id]%>
+          <div class="card shadow p-3 mb-5 bg-white rounded">
+            <div class="card" style="width: 20rem;">
+              <h5> <%= users.first_name %>
+              <%= users.surname %> <br> </h5>
+                <div class="row">
+                  <br>
+                </div>
+           </div>
+          </div>
+        <% else %>
+        <% end %>
+      <% end %>
+</div>
+
+
+<div class="col">
 <div class="container">
-  <div class = "row offset-2">
+  <div class = "row offset-1">
     <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 100rem;">
       <label id="home" for="post" class="form-label"> <h4>Whats on your mind?</h4></label>
         <%= form_for @post do |form| %>
@@ -55,7 +77,7 @@
 
 <% @posts.each do |post| %>
   <div class="container">
-    <div class ="row offset-2">
+    <div class ="row offset-1">
       <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 100rem;">
         <div class="card-body">
           <h5 class="card-title"><p><% username = @users.find_by(id: post.user_id)%> </p>
@@ -112,6 +134,16 @@
     </div>
   </div>
 <% end %>
+</div>
+
+    <div class="col">
+    </div>
+  </div>
+
+
+
+
+
 
 
 

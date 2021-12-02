@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @comment = Comment.new
+    @contacts = User.all
     @posts = Post.all.order(created_at: :desc)
     @posts_comments = Comment.all.order(created_at: :desc)
     @users = User.all
