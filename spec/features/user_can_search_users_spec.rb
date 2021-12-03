@@ -14,23 +14,32 @@ RSpec.feature "Search function", type: :feature do
   end 
 
   scenario "Can search a user" do
-    visit "/posts"
+    visit "/"
+    fill_in "Email", with: "Beckyrose200@aol.com"
+    fill_in 'Password', with: "12345678910"
+    click_button 'Log In'
     fill_in "Search by user", with: "Rebecca"
-    click_button "Submit"
-    expect(page).to have_content("Rebecca Ransome")
+    click_button "Search"
+    expect(page).to have_content("Name: Rebecca")
   end
 
   scenario "Can search a user without case sensitivity" do
-    visit "/posts"
+    visit "/"
+    fill_in "Email", with: "Beckyrose200@aol.com"
+    fill_in 'Password', with: "12345678910"
+    click_button 'Log In'
     fill_in "Search by user", with: "rebecca"
-    click_button "Submit"
-    expect(page).to have_content("Rebecca Ransome")
+    click_button "Search"
+    expect(page).to have_content("Name: Rebecca")
   end
 
   scenario "Shows no search results when user isnt found" do
-    visit "/posts"
+    visit "/"
+    fill_in "Email", with: "Beckyrose200@aol.com"
+    fill_in 'Password', with: "12345678910"
+    click_button 'Log In'
     fill_in "Search by user", with: "Sophie"
-    click_button "Submit"
+    click_button "Search"
     expect(page).to have_content("No Search Results")
   end
 end 
