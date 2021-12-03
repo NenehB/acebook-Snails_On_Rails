@@ -78,6 +78,11 @@
      :order => [:day, :month, :year],
      :include_blank => true%>
      </div>
+    
+     <br>
+     
+     <%=f.label "Profile Photo" %>
+     <%= f.file_field :avatar %><br>
  
      <br>
      <div class="actions"><%= f.submit "Sign Up" %></div>
